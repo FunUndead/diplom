@@ -81,10 +81,15 @@ class VKUser:
                 with open("images/%s" % file_name_new, "wb") as f:
                     f.write(api.content)
 
-            with open('data.json', 'w', encoding='utf-8') as file:          #Запись в JSON файл
-                json.dump(data_json_list, file)
-
+            json_list(data_json_list)
         return print("Скачивание фото выполнено!")
+
+def json_list(data_json_list):
+    with open('data.json', 'w', encoding='utf-8') as file:  # Запись в JSON файл
+        json.dump(data_json_list, file)
+
+
+
 
 class VKYandex:
     def __init__(self, token_yandex):
